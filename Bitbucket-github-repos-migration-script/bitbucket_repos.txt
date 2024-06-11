@@ -1,0 +1,4 @@
+bitbucket_repos.txt sample:
+
+https://bitbucketurl/projectname/myrepo1.git
+https://bitbucketurl/projectname/nex/myrepo2.git
