@@ -1,0 +1,10 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['compute', 'instances', 'create', 'example-instance', '--zone', 'us-central1-a']
+    id: 'create-instance'
+    condition: '$BUILD_SUCCESS'
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['compute', 'instances', 'delete', 'example-instance', '--zone', 'us-central1-a']
+    id: 'delete-instance'
+    condition: '$BUILD_FAILURE'
