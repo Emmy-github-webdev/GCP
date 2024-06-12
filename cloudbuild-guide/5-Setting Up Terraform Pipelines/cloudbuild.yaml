@@ -1,0 +1,15 @@
+steps:
+  # Initialize Terraform
+  - name: 'hashicorp/terraform:light'
+    args: ['init']
+  
+  # Plan Terraform changes
+  - name: 'hashicorp/terraform:light'
+    args: ['plan']
+    id: 'plan'
+  
+  # Apply Terraform changes
+  - name: 'hashicorp/terraform:light'
+    args: ['apply', '-auto-approve']
+    id: 'apply'
+    waitFor: ['plan']
