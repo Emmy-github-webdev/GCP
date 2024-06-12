@@ -1,0 +1,5 @@
+artifacts:
+  objects:
+    location: 'gs://my-artifacts-bucket/'
+    paths:
+      - 'path/to/artifacts/**
