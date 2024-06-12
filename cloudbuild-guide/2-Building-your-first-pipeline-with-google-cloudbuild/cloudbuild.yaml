@@ -1,0 +1,19 @@
+steps:
+  # Install dependencies
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  # Run tests
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['test']
+
+  # Build the application
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+
+# Specify the images to be pushed to the Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/my-app:latest'
+
+# Optional: Define a timeout for the build
+timeout: '1600s'
