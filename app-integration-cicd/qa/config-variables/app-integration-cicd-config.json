@@ -1,0 +1,5 @@
+{
+	"`CONFIG_CONN_NAME`": "projects/bap-emea-apigee-11/locations/europe-west4/connections/pubsub",
+	"`CONFIG_ENV`": "qa",
+	"`CONFIG_URL`": "https://mocktarget.apigee.net/json"
+}

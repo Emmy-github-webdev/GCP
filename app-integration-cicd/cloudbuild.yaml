@@ -1,0 +1,73 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License
+
+#to manually trigger from gcloud
+# gcloud builds submit --config=deploy.yaml --project=project-name --region=us-west1
+steps:
+- id: 'Integration CLI version'
+  name: us-docker.pkg.dev/appintegration-toolkit/images/integrationcli:latest
+  args:
+    - --version
+- id: 'Apply Integration scaffolding configuration'
+  name: us-docker.pkg.dev/appintegration-toolkit/images/integrationcli:latest
+  args:
+    - integrations
+    - apply
+    - -f
+    - .
+    - -u
+    - ${SHORT_SHA}
+    - --wait=${_WAIT}
+    - --reg=${_LOCATION}
+    - --proj=${PROJECT_ID}
+    - --metadata-token
+    - --env=${BRANCH_NAME}
+    - $(cat /tmp/cmd)
+- name: node:16
+  id: "Install Node Dependencies"
+  entrypoint: npm
+  args: ['install', '--silent', '--no-fund']
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: Setup test
+  entrypoint: 'bash'
+  args:
+    - -c 
+    - |
+      export name=$(ls -A src | sed 's/\.json'$//)
+      export basepath=/v1/projects/${PROJECT_ID}/locations/${_LOCATION}/integrations/${name}:execute
+      export triggerId="api_trigger/${name}_API_1"
+      export token=$(gcloud auth application-default print-access-token)
+      export env=$BRANCH_NAME
+      echo "env: " $env
+
+      # update the files with the variables
+      sed -i "s@INTEGRATION_HOST@$_BUILD_INTEGRATION_HOST@g" ./tests/integration/support/init.js
+      sed -i "s@INTEGRATION_BASEPATH@$basepath@g" ./tests/integration/support/init.js
+
+      sed -i "s@TRIGGER_ID@$triggerId@g" ./tests/integration/demo.feature
+      sed -i "s@ACCESS_TOKEN@$token@g" ./tests/integration/demo.feature
+      sed -i "s@INTEGRATION_ENV@$env@g" ./tests/integration/demo.feature
+- name: node:16
+  id: "Functional Test"
+  entrypoint: npm
+  args: ['run', 'integration-test']
+
+substitutions:
+  _LOCATION: "europe-west4"
+  _BUILD_INTEGRATION_HOST: "${_LOCATION}-integrations.googleapis.com"
+  _WAIT: "true"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  substitution_option: "ALLOW_LOOSE"

@@ -1,0 +1,25 @@
+{
+	"connectorDetails": {
+		"name": "pubsub",
+		"provider": "gcp",
+		"version": 1
+	},
+	"configVariables": [
+		{
+			"key": "project_id",
+			"stringValue": "$PROJECT_ID$"
+		},
+		{
+			"key": "topic_id",
+			"stringValue": "mytopic"
+		}
+	],
+	"authConfig": {},
+	"logConfig": {},
+	"sslConfig": {
+		"privateServerCertificate": {},
+		"clientCertificate": {},
+		"clientPrivateKey": {},
+		"clientPrivateKeyPass": {}
+	}
+}

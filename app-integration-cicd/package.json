@@ -1,0 +1,25 @@
+{
+    "name": "app-integration-cicd",
+    "version": "1.0.0",
+    "description": "Application Integration CICD Reference",
+    "author": "ssvaidyanathan",
+    "license": "Apache-2.0",
+    "licenses": [
+        {
+            "type": "Apache-2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "scripts": {
+        "integration-test": "npm install --silent; cucumber-js ./tests/integration",
+        "dev-integration-test": "npm install --silent;./local_test.sh; cucumber-js ./tests_local/integration; rm -rf tests_local node_modules"
+    },
+    "dependencies": {
+        "@cucumber/cucumber": "^9",
+        "@cucumber/pretty-formatter": "^1",
+        "cucumber-html-reporter": "latest",
+        "@xmldom/xmldom": "0.x",
+        "apickli": "latest"
+    }
+    
+}

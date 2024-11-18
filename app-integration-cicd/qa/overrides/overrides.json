@@ -1,0 +1,19 @@
+{
+	"connection_overrides": [
+		{
+			"taskId": "3",
+			"task": "GenericConnectorTask",
+			"parameters": {
+				"connectionName": "pubsub"
+			}
+		}
+	],
+	"integration_overrides": {
+		"databasePersistencePolicy": "DATABASE_PERSISTENCE_POLICY_UNSPECIFIED",
+		"enableVariableMasking": true,
+		"cloudLoggingDetails": {
+			"cloudLoggingSeverity": "ERROR",
+			"enableCloudLogging": true
+		}
+	}
+}
