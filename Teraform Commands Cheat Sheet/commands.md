@@ -52,3 +52,5 @@
 | terraform -chdir=”../stage” apply | Applies Terraform configurations located in the "../stage" directory. |
 | terraform -install-autocomplete | Enables shell autocompletion for Terraform commands |
 | terraform -debug <command> | '-debug' flag along with the specific Terraform command you want to debug.|
+|terraform import <resource> <remote_id> | Import existing infrastructure into Terraform |
+| terraform state pull | Pull current state and output to stdout|
