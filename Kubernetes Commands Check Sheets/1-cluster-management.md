@@ -4,3 +4,28 @@
 ```
 kubectl cluster-info
 ```
+
+#### _Display the Kubernetes version running on the client and server_
+```
+kubectl version
+```
+
+#### _Get the configuration of the cluster_
+```
+kubectl config view
+```
+
+#### _List the API resources that are available_
+```
+kubectl api-resources
+```
+
+#### _List the API versions that are available_
+```
+kubectl api-version
+```
+
+#### _List everything_
+```
+kubectl get all --all-namespaces
+```
