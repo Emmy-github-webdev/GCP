@@ -15,3 +15,8 @@ MicroServices
 
 https://github.com/GoogleCloudPlatform/microservices-demo
 https://github.com/DaudCloud-sudo/Microservice-CI-CD-Pipeline
+
+
+https://dev.to/prodevopsguytech/devops-project-cicd-pipeline-for-a-microservices-based-application-on-kubernetes-1ba8
+
+https://dev.to/arbythecoder/day-14-advanced-logging-and-monitoring-with-prometheus-grafana-and-alertmanager-termux-edition-dk1
