@@ -1,3 +1,13 @@
+# Kubernetes
+
+## Kubernetes Architecture
+It consists of master and worker nodes. Master being installed on a single Linux system and the nodes on many workstations.
+### Master node: Contains components such as
+1. _API Server_: Exposes the Kubernetes API
+2. _Kube-Controller manager_: is responsible for running the controllers that handle the various aspects of the cluster's control loop
+3. _Kube-Scheduler_: It decides on which node to schedule the pod for better efficiency of the cluster
+4. _etcd database_: for stage storag
+5. _Kube-proxy_: for networking
 #### Deployment Yaml
 
 ```
