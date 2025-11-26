@@ -46,7 +46,7 @@ spec:
       targetPort: 80
 ```
 #### Common Errors
-- _CrashLoopBackOff_: Kubernetes was unable to schedule a the pod on a node because of lacks the necessary resources to run the pod. Identify this error by using the kubectl get pods command. The affected pod show a CrashLoopBackOff status
+- __CrashLoopBackOff__: Kubernetes was unable to schedule a the pod on a node because of lacks the necessary resources to run the pod. Identify this error by using the kubectl get pods command. The affected pod show a CrashLoopBackOff status
 - _OOMKilled (Out Of Memory Killed)_: The container used more memory than its memory limit, and the kernel killed it. Pod status shows _Terminated_. Fixed by increase memory limits/requests.
 
 ```
