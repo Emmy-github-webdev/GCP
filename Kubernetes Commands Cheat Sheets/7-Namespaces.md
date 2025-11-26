@@ -1,27 +1,28 @@
-# Namespaces
-Shortcode = ns
+# 
 
-#### _Create namespace <name>_
+
+#### __
 ```
-kubectl create namespace <namespace_name>
+
 ```
-#### _List one or more namespaces_
+#### __
 ```
-kubectl get namespace <namespace_name>
+
 ```
-#### _Display the detailed state of one or more namespace_
+#### __
 ```
-kubectl describe namespace <namespace_name>
+
 ```
-#### _Delete a namespace_
+#### __
 ```
-kubectl delete namespace <namespace_name>
+
 ```
-#### _Edit a namespace_
+#### __
 ```
-kubectl edit namespace <namespace_name>
+
 ```
 #### _Display Resource (CPU/Memory/Storage) usage for a namespace_
 ```
-kubectl top namespace <namespace_name>
+
 ```
+

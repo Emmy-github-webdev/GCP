@@ -4,21 +4,23 @@ Another option for modifying objects is through Manifest Files. We highly recomm
 
 #### _Apply a configuration to an object by filename or stdin. Overrides the existing configuration._
 ```
-kubectl apply -f manifest_file.yaml
+
 ```
-#### _Create Objects_
+#### __
 ```
-kubectl create -f manifest_file.yaml
+
 ```
-#### _Create Objects in all manifest files in a directory_
+#### __
 ```
-kubectl create -f ./dir
+
 ```
-#### _Create Objects from a URL_
+#### __
 ```
-kubectl create -f 'url'
+
 ```
-#### _Delete Object_
+#### __
 ```
-kubectl delete -f manifest_file.yaml
+
 ```
+
+

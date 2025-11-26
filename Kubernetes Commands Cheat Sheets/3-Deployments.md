@@ -25,3 +25,4 @@ kubectl delete deployment <deployment_name>
 ```
 kubectl rollout status deployment <deployment_name>
 ```
+

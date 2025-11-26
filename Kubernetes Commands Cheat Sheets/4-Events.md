@@ -1,23 +1,25 @@
-# Events
-Shortcode = ev
+# 
 
-#### _List recent events for all resources in the system_
+
+#### __
 ```
-kubectl get events
+
 ```
-#### _List Warnings only_
+#### __
 ```
-kubectl get events --field-selector type=Warning
+
 ```
-#### _List events but exclude Pod events_
+#### __
 ```
-kubectl get events --field-selector involvedObject.kind!=pod
+
 ```
-#### _Pull events for a single node with a specific name_
+#### __
 ```
-kubectl get events --field-selector involvedObject.kind=Node, involvedObject.name=<node_name>
+
 ```
-#### _Filter out normal events from a list of events_
+#### __
 ```
-kubectl get events --field-selector type!=Normal
+
 ```
+
+

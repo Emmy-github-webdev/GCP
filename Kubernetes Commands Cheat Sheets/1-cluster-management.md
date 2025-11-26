@@ -29,3 +29,13 @@ kubectl api-version
 ```
 kubectl get all --all-namespaces
 ```
+
+|Command | Description|
+| :-: | :-: |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |

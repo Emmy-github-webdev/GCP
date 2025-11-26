@@ -1,11 +1,11 @@
-# Replication Controllers
-Shortcode = rc
+# 
 
-#### _List the replication controllers_
+
+#### __
 ```
-kubectl get rc
+
 ```
-#### _List the replication controllers by namespace_
+#### __
 ```
-kubectl get rc --namespace="<namespace_name>"
+"
 ```

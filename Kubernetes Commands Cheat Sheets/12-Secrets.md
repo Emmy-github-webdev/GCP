@@ -1,19 +1,20 @@
 # Secrets
 
-#### _Create secret_
-```
-kubectl create secret
-```
-#### _list secret_
-```
-kubectl get secret
+#### __
 ```
 
-#### _List details about secret_
 ```
-kubectl describe secrets
+#### __
 ```
-#### _Delete secret_
+
 ```
-kubectl delete secret <secret_name>
+
+#### __
 ```
+
+```
+#### __
+```
+
+```
+

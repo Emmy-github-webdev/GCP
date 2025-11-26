@@ -1,11 +1,12 @@
-# StatefulSet
-Shortcode = sts
+# 
 
-#### _List StatefulSet_
+
+#### __
 ```
-kubectl get statefulset
+
 ```
-#### _Delete StatefulSet only (not pods)_
+#### __
 ```
-kubectl delete statefulset/[stateful_set_name] --cascade=false
+
 ```
+

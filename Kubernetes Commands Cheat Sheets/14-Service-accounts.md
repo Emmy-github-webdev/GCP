@@ -1,21 +1,22 @@
 # Service Accounts
 
-Service Accounts
-Shortcode = sa
 
-#### _List service accounts_
+
+
+#### __
 ```
-kubectl get serviceaccounts
+
 ```
-#### _Display the detailed state of one or more service accounts_
+#### __
 ```
-kubectl describe serviceaccounts
+
 ```
-#### _Replace a service account_
+#### __
 ```
-kubectl replace serviceaccounts
+
 ```
-#### _Delete a service account_
+#### __
 ```
-kubectl delete serviceaccounts <service_account_name>
+
 ```
+
